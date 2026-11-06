@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Photo Gallery</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      background: #f2f2f2;
+      color: #222;
+    }
+    h1 { text-align: center; color: #333; margin: 0 0 24px; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .gallery img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    @media (max-width: 768px) {
+      body { padding: 20px; }
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+      .gallery img { height: 200px; }
+    }
+    @media (max-width: 480px) {
+      body { padding: 14px; }
+      h1 { font-size: 1.55rem; }
+      .gallery { grid-template-columns: 1fr; gap: 12px; }
+      .gallery img { height: auto; aspect-ratio: 4 / 3; }
+    }
+  </style>
+</head>
+<body>
+  <h1>My Photo Gallery</h1>
+  <main class="gallery">
+    <img src="https://picsum.photos/id/1015/500/350" alt="Mountain landscape">
+    <img src="https://picsum.photos/id/1016/500/350" alt="Forest landscape">
+    <img src="https://picsum.photos/id/1025/500/350" alt="Dog">
+    <img src="https://picsum.photos/id/1035/500/350" alt="River landscape">
+    <img src="https://picsum.photos/id/1043/500/350" alt="Nature">
+    <img src="https://picsum.photos/id/1050/500/350" alt="Beach">
+    <img src="https://picsum.photos/id/106/500/350" alt="Waterfall">
+    <img src="https://picsum.photos/id/1074/500/350" alt="Animal">
+    <img src="https://picsum.photos/id/1084/500/350" alt="Ocean">
+  </main>
+</body>
+</html>
